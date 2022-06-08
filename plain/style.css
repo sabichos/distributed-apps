@@ -1,0 +1,171 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: clamp(100%, 1rem + 2vw, 16px);
+    font-family: 'Roboto Condensed', sans-serif;
+    display: grid;
+    grid-template-areas: "header""main""footer";
+    grid-template-rows: min-content auto min-content;
+    height: 100vh;
+}
+
+.hidden {
+   display: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--size-sm);
+    box-shadow: 0 0 3px var(--color-medium);
+    grid-area: header;
+}
+
+header h1 {
+    margin: 0;
+    font: var(--font-title)
+}
+
+header h1 a {
+    text-decoration: none;
+    color: var(--color-accent1);
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--color-medium-dark);
+}
+
+header nav a:hover {
+    text-decoration: underline;
+    color: var(--color-accent2);
+    transition: all 0.3s;
+}
+
+main {
+    grid-area: main;
+    padding: var(--size-sm);
+    overflow: auto;
+}
+
+main #screen {
+    background: linear-gradient(62deg, #ff0099 0%, #E0C3FC 100%);
+    aspect-ratio: 16/9;
+    position: relative;
+}
+
+main #instructions,
+main #screen {
+    width: 50vw;
+    min-width: 500px;
+    max-width: 800px;
+    margin-inline: auto;
+}
+
+main #instructions {
+    color: var(--font-dark);
+}
+
+main #instructions .title {
+    font: var(--font-lgb);
+}
+
+
+main #screen #lines {
+    padding: var(--size-sm) 0;
+}
+
+main #screen .line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--size-sm);
+}
+
+main #screen .line button {
+    background: transparent;
+    border: none;
+}
+
+main #screen .line .duration,
+main #screen .line .trash {
+    visibility: hidden;
+}
+
+main #screen .line:hover .duration,
+main #screen .line:hover .trash {
+    visibility: visible;
+}
+
+main #screen .lyrics{
+    font: var(--font-xl);
+    color: var(--color-light);
+    text-shadow: 0px 0px 2px black;
+}
+
+main #screen input.lyrics-input{
+    border: none;
+    background: transparent;
+    text-align: center;
+}
+
+main #screen input.lyrics-input:focus{
+    outline: none;
+}
+
+
+main #screen-toolbar {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.3);
+    padding: var(--size-xs);
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+main #screen-toolbar button {
+    background: transparent;
+    border: none;
+}
+
+main #screen-toolbar .toolbar-action {
+    margin: 0 4px;
+}
+
+main #screen-toolbar .toolbar-action:hover .icon {
+    filter: invert(77%) sepia(17%) saturate(1215%) hue-rotate(210deg) brightness(105%) contrast(98%);
+    transition: filter 0.3s;
+}
+
+
+main #btn-add-line:disabled .icon {
+    cursor: not-allowed;
+    filter: invert(89%) sepia(13%) saturate(195%) hue-rotate(182deg) brightness(84%) contrast(92%);
+    transition: filter 0.3s;
+}
+
+
+main .icon {
+    width: 16px;
+    height: 16px;
+}
+
+main .icon.flip {
+    transform: scale(1, -1);
+}
+
+
+footer {
+    grid-area: footer;
+    padding: var(--size-sm);
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
