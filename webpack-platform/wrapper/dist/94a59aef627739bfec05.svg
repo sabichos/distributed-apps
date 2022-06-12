@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg
+    version="1.1"
+    id="Payoneer_logo"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 440 440">
+
+    <style type="text/css">
+
+        foreignObject.logoBack {
+            animation: colorRotate 7.5s infinite linear;
+            transform-origin: 220px 220px;
+        }
+
+        div.logoGradient {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(from 270deg, #ff4800 10%, #dfd902 35%, #20dc68, #0092f4, #da54d8 72% 75%, #ff4800 95%);
+        }
+
+        g.logoBlend {
+            mix-blend-mode: lighten;
+        }
+
+        path {
+            stroke: black;
+            stroke-width: 36;
+            stroke-dasharray: 1255;
+            stroke-linecap: round;
+            fill: none;
+            transform-origin: 220px 220px;
+            animation:
+                pathStroke 3.75s infinite ease-in-out,
+                pathRotate 7.5s infinite cubic-bezier(1,.5,0,.5);
+        }
+
+        @keyframes colorRotate {
+            from { transform: rotate(270deg); }
+            to { transform: rotate(-90deg); }
+        }
+
+        @keyframes pathStroke {
+            0% {  stroke-dashoffset: -1255; }
+            40%, 70% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: 1255; }
+        }
+
+        @keyframes pathRotate {
+            0% {  transform: rotate(0deg); }
+            50% { transform: rotate(-540deg); }
+            100% { transform: rotate(-1080deg); }
+        }
+
+    </style>
+
+    <foreignObject class="logoBack"  x="1" y="1" width="438" height="438">
+        <div class="logoGradient" xmlns="http://www.w3.org/1999/xhtml" />
+    </foreignObject>
+
+    <g class="logoBlend">
+        <rect x="0" y="0" width="440" height="440" fill="white" />
+        <path d="M 220 420 a 200 200 0 0 1 0 -400 200 200 0 0 1 0 400" />
+    </g>
+
+</svg>
