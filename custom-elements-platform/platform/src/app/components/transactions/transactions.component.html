@@ -1,0 +1,11 @@
+<app-card title="Transactions">
+  <div viewer class="view">
+    <ul>
+      <li *ngFor="let transaction of transactions">
+        <div>on {{transaction.date}}</div>
+        <div>{{transaction.amount}} USD</div>
+        <div>{{transaction.description}}</div>
+      </li>
+    </ul>
+  </div>
+</app-card>

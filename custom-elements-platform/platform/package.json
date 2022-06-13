@@ -1,0 +1,37 @@
+{
+  "name": "platform",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "node ./api/index.js & ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "build:phone": "ng build platform",
+    "build:web-component": "npm run build:phone && rm -rf dist && npm run build:web-component:compile && npm run build:web-component:concat",
+    "build:web-component:compile": "ng run platform:build:securePhone --main='src/app/compile.ts'",
+    "build:web-component:concat": "cat dist/secure-phone/runtime.js dist/secure-phone/main.js > dist/secure-phone/secure-phone.js"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^14.0.0",
+    "@angular/common": "^14.0.0",
+    "@angular/compiler": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "@angular/elements": "14.0.1",
+    "@angular/forms": "^14.0.0",
+    "@angular/platform-browser": "^14.0.0",
+    "@angular/platform-browser-dynamic": "^14.0.1",
+    "@angular/router": "^14.0.0",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^14.0.1",
+    "@angular/cli": "~14.0.1",
+    "@angular/compiler-cli": "^14.0.0",
+    "express": "^4.18.1",
+    "regexparam": "^2.0.0",
+    "typescript": "~4.7.2"
+  }
+}
