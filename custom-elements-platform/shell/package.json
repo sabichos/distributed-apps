@@ -1,16 +1,11 @@
 {
-  "name": "platform",
+  "name": "shell",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "node ./api/index.js & ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "build:phone": "ng build --configuration securePhone",
-    "build:web-component": "npm run build:phone && npm run build:web-component:concat && npm run build:web-component-folder",
-    "build:web-component:concat": "cat dist/secure-phone/polyfills.*.js cat dist/secure-phone/runtime.*.js dist/secure-phone/main.*.js > dist/secure-phone/secure-phone.js",
-    "build:web-component-folder": "cp dist/secure-phone/secure-phone.js ../test"
-
+    "watch": "ng build --watch --configuration development"
   },
   "private": true,
   "dependencies": {
@@ -18,10 +13,9 @@
     "@angular/common": "^14.0.0",
     "@angular/compiler": "^14.0.0",
     "@angular/core": "^14.0.0",
-    "@angular/elements": "14.0.1",
     "@angular/forms": "^14.0.0",
     "@angular/platform-browser": "^14.0.0",
-    "@angular/platform-browser-dynamic": "^14.0.1",
+    "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

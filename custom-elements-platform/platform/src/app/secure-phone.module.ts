@@ -1,5 +1,6 @@
-import { NgModule, DoBootstrap, Injector } from '@angular/core';
+import { NgModule, Injector, DoBootstrap, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { createCustomElement } from '@angular/elements';
 import { SecurePhoneComponent } from './components/secure-phone/secure-phone.component';
@@ -12,15 +13,19 @@ import { SecurePhoneComponent } from './components/secure-phone/secure-phone.com
   ],
   imports: [
     CommonModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  exports: [SecurePhoneComponent],
-  bootstrap:[SecurePhoneComponent]
+  providers: [HttpClient],
+  exports: [SecurePhoneComponent]
 })
 export class SecurePhoneModule implements DoBootstrap {
-  constructor(private injector: Injector) { }
-  ngDoBootstrap(): void {
-    const webComponent = createCustomElement(SecurePhoneComponent, { injector: this.injector });
+  constructor(injector: Injector) {
+    const webComponent = createCustomElement(SecurePhoneComponent, { injector });
     customElements.define('secure-phone', webComponent);
+  }
+
+  ngDoBootstrap(appRef: ApplicationRef): void {
+    appRef.bootstrap(SecurePhoneComponent);
   }
 }

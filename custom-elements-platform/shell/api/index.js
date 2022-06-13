@@ -3,7 +3,7 @@ const apiMap = require("./map.js");
 const regexparam = require('regexparam');
 
 const app = express();
-const port = 4525;
+const port = 4523;
 
 
 app.use("/api", (req, res, next) => {

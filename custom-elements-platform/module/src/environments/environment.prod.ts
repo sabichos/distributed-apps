@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  componentPath:"http://localhost:4524"
 };

@@ -5,7 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "build:web-component": "npm run build && npm run build:web-component:concat && npm run build:web-component-folder",
+    "build:web-component:concat": "cat dist/module/polyfills.*.js dist/module/runtime.*.js dist/module/main.*.js > dist/module/new-card.js",
+    "build:web-component-folder": "cp dist/module/new-card.js ../test"
   },
   "private": true,
   "dependencies": {
@@ -13,6 +16,7 @@
     "@angular/common": "^14.0.0",
     "@angular/compiler": "^14.0.0",
     "@angular/core": "^14.0.0",
+    "@angular/elements": "^14.0.1",
     "@angular/forms": "^14.0.0",
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",

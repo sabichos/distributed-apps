@@ -1,0 +1,11 @@
+<section id="wrapper" *ngIf="user; else loader">
+  <app-navbar id="navbar" [sitemap]="user.sitemap"></app-navbar>
+  <main id="main">
+    <router-outlet></router-outlet>
+  </main>
+  <user-details id="info" [user]="user"></user-details>
+</section>
+
+<ng-template #loader>
+  <page-loader></page-loader>
+</ng-template>

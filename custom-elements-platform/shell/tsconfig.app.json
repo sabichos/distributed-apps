@@ -2,11 +2,11 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "outDir": "./out-tsc/secure-phone",
+    "outDir": "./out-tsc/app",
     "types": []
   },
   "files": [
-    "src/securePhoneMain.ts",
+    "src/main.ts",
     "src/polyfills.ts"
   ],
   "include": [

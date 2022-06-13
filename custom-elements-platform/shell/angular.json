@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "platform": {
+    "shell": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -43,7 +43,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/platform",
+            "outputPath": "dist/shell",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -86,18 +86,6 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
-            },
-            "securePhone": {
-              "main": "src/securePhoneMain.ts",
-              "tsConfig": "tsconfig.phone.json",
-              "outputPath": "dist/secure-phone",
-              "outputHashing": "all",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
             }
           },
           "defaultConfiguration": "production"
@@ -106,10 +94,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "platform:build:production"
+              "browserTarget": "shell:build:production"
             },
             "development": {
-              "browserTarget": "platform:build:development"
+              "browserTarget": "shell:build:development"
             }
           },
           "defaultConfiguration": "development",
@@ -120,7 +108,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "platform:build"
+            "browserTarget": "shell:build"
           }
         }
       }
