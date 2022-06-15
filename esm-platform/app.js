@@ -1,10 +1,12 @@
 const express = require('express');
 const apiMap = require("./api/index.js");
 const regexparam = require('regexparam');
+const cors = require("cors");
 
 const app = express();
-const port = 4530;
+const port = 4533;
 
+app.use(cors())
 
 app.use("/api", (req, res, next) => {
 
@@ -30,18 +32,6 @@ app.use("/api", (req, res, next) => {
 
 
 });
-
-
-
-const fallback = (...args) => (req, res, next) => {
-    if ((req.method === 'GET' || req.method === 'HEAD') && req.accepts('html') && !req.url.endsWith(".html")) {
-        (res.sendFile || res.sendfile).call(res, ...args, err => err && next())
-    } else next()
-}
-
-app.use(express.static('shell'));
-app.use(fallback('index.html', { root: "shell" }))
-
 
 app.listen(port, () => {
     console.log(`Yotam Admin app listening on port ${port}`);

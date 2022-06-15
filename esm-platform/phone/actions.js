@@ -16,3 +16,13 @@ export async function loadStyle(url) {
     sheet.replaceSync(style);
     document.adoptedStyleSheets.push(sheet);
 }
+
+
+export function createIcon(viewBox, d) {
+    var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    var path = document.createElementNS("http://www.w3.org/2000/svg", 'path');
+    svg.setAttribute('viewBox', viewBox);
+    path.setAttribute('d', d);
+    svg.appendChild(path);
+    return svg;
+}

@@ -1,5 +1,5 @@
-import { fetchTemplate, createIcon, getStyleUrl } from "./actions.js";
-import { getRouteComponent, getRoute } from "./navigation.js";
+import { fetchTemplate, createIcon } from "./actions.js";
+import { initRouter, getRoute } from "./navigation.js";
 
 async function renderNavbar(user) {
     const navbarComponent = await fetchTemplate("navbar");
@@ -13,7 +13,7 @@ async function renderNavbar(user) {
             currentNode.style.paddingInlineStart = `${16 + level * 16}px`;
             const child = document.createElement((link.url ? "a" : "span"));
             child.innerText = link.title;
-            child.href = link.pathname || "";
+            child.href = "#" + link.pathname || "";
             currentNode.replaceChildren(child);
             navbarComponent.querySelector("#links").appendChild(currentNode);
 
@@ -40,15 +40,13 @@ async function renderPage(user) {
     if (user.selectedRoute?.url) {
         mainComponent.querySelector("#page-header").removeAttribute("data-hidden");
         mainComponent.querySelector("#page-title").innerText = "dashboard";
-        mainComponent.querySelector("#page-breadcrumb").innerText = user.selectedRoute?.pathname.replace(/\//g, " > ");    
+        mainComponent.querySelector("#page-breadcrumb").innerText = user.selectedRoute?.pathname.replace(/\//g, " > ");
     }
-
-
-    const [name, page] = await getRouteComponent(user);
-    mainComponent.querySelector("#page-body").replaceChildren(page);
     document.getElementById("main").replaceChildren(mainComponent);
-    document.getElementById("page-style").href = getStyleUrl(name);
 }
+
+
+
 
 
 export async function cardPage(user) {
@@ -57,6 +55,7 @@ export async function cardPage(user) {
     page.id = "card-page";
     for (const link of user.sitemap[0].children) {
         const ct = cardComponent.cloneNode(true);
+        ct.querySelector(".card").href = "#" + link.pathname;
         ct.querySelector(".title").innerText = link.title;
         if (link.icon)
             ct.querySelector(".icon").replaceChildren(createIcon(link.icon[0], link.icon[1]));
@@ -67,5 +66,6 @@ export async function cardPage(user) {
 
 export async function shell(userDetails) {
     userDetails["selectedRoute"] = getRoute(userDetails.sitemap);
-    Promise.all([renderNavbar(userDetails), renderPage(userDetails), renderUserDetails(userDetails)]);
+    await Promise.all([renderNavbar(userDetails), renderPage(userDetails), renderUserDetails(userDetails)]);
+    initRouter(document.querySelector("#page-body"), userDetails);
 }

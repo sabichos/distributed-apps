@@ -1,5 +1,5 @@
 export async function fetchUserDetails() {
-    return await fetch("/api/v1/user").then(res => res.json());
+    return await fetch("http://localhost:4533/api/v1/user").then(res => res.json());
 }
 
 
@@ -19,8 +19,4 @@ export function createIcon(viewBox, d) {
     path.setAttribute('d', d);
     svg.appendChild(path);
     return svg;
-}
-
-export function getStyleUrl(name){
-    return `/assets/${name}.css`;
 }

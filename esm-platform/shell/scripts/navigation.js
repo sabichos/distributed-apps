@@ -1,10 +1,26 @@
 import { cardPage } from "./shell.js"
-import {newCard} from "http://localhost:4531/scripts/new-card.js";
+import { newCard } from "http://localhost:4531/scripts/new-card.js";
+
+
+export function initRouter(root, user) {
+
+    async function setComponent() {
+        const [name, page] = await getRouteComponent(user);
+        root && root.replaceChildren(page);
+    }
+
+    //document.removeEventListener("hashchange", setComponent);
+    window.addEventListener("hashchange", async () => {
+        await setComponent();
+    });
+
+    setComponent();
+}
 
 export async function getRouteComponent(...args) {
 
-    switch (location.pathname) {
-        case "/cards/new-card":
+    switch (location.hash) {
+        case "#cards/new-card":
             return ["new-card", await newCard(...args)];
         default:
             return ["card-page", await cardPage(...args)];

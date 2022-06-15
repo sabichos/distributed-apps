@@ -4,15 +4,20 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "serve": "pnpm serve:shell & pnpm serve:module",
-    "serve:shell": "node app.js",
-    "serve:module": "pnpm dlx http-server module --cors -p 4531 -P http://localhost:4533"
+    "serve": "concurrently -n \"api,shell,module,phone\" \"pnpm serve:api\" \"pnpm serve:shell\" \"pnpm serve:module\"  \"pnpm serve:phone\"",
+    "serve:api": "node app.js",
+    "serve:shell": "http-server shell --cors -p 4530",
+    "serve:module": "http-server module --cors -p 4531",
+    "serve:phone": "http-server phone --cors -p 4532"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^7.2.2",
+    "cors": "^2.8.5",
     "express": "^4.18.1",
+    "http-server": "^14.1.1",
     "regexparam": "^2.0.0"
   }
 }

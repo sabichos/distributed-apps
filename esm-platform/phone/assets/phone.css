@@ -1,0 +1,35 @@
+#secure-phone .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom:var(--size-lg);
+}
+
+#secure-phone .subrow{
+    display:flex;
+    align-items:center;
+}
+
+#secure-phone .btn-link {
+    color: var(--color-accent2);
+    border: none;
+    background-color: transparent;
+    text-align:end;
+    
+}
+#secure-phone .btn-link:hover {
+    color: var(--color-dark);
+}
+#secure-phone .btn-link:disabled {
+    color: var(--color-medium);
+    cursor: not-allowed;
+}
+
+
+#secure-phone #icon-success {
+    width:16px;
+    height:16px;
+    fill: var(--color-accent1);
+    margin-inline-start: -20px;
+    z-index: 1;
+}
