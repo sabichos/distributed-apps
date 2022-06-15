@@ -8,7 +8,7 @@ export default function ConnectionsEditor({ initialConnections }) {
     const [connections, setConnections] = useState(initialConnections);
 
     function removeConnection(connection) {
-        fetch("onboarding/api/customer/connection", { method: "post", headers: { "Content-Type": "application/json" }, body: connection })
+        fetch("customer/api/customer/connection", { method: "post", headers: { "Content-Type": "application/json" }, body: connection })
             .then(() => {
                 const newConnections = connections.filter(c => c.name !== connection.name);
                 setConnections(newConnections);

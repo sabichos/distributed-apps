@@ -14,7 +14,7 @@ export default function Home() {
 
     const [customerDetails, setCustomerDetails] = useState();
     useEffect(() => {
-        fetch("onboarding/api/customer")
+        fetch("customer/api/customer")
             .then(res => res.json())
             .then(res => setCustomerDetails(res));
     }, []);

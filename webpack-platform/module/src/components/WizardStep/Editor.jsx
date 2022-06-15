@@ -4,7 +4,7 @@ import { WizardStepEditorStyle } from "./styled";
 
 export default function WizardStepEditor({ initialConnections }) {
 
-    const SecurePhoneNumber = lazy(() => import("onboarding/PhoneNumber"));
+    const SecurePhoneNumber = lazy(() => import("customer/PhoneNumber"));
 
 
     return (

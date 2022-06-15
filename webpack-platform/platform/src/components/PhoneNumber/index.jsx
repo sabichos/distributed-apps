@@ -13,7 +13,7 @@ export default function SecurePhoneNumber({ name, label, initialValue, onChange 
     const [stage, setStage] = useState(initialValue ? stages.codeVerified : stages.initial);
 
     useEffect(() => {
-        fetch("/onboarding/api/customer/assets/countries")
+        fetch("/customer/api/customer/assets/countries")
             .then(res => res.json())
             .then(res => setCountries(res.countries));
     }, []);
@@ -24,11 +24,11 @@ export default function SecurePhoneNumber({ name, label, initialValue, onChange 
     }
 
     function sendCode() {
-        fetch("/onboarding/api/phone/verify").then(() => setStage(stages.codeSent));
+        fetch("/customer/api/phone/verify").then(() => setStage(stages.codeSent));
     }
 
     function verifyCode() {
-        fetch("/onboarding/api/phone/verify", { method: "post", body: verificationCode }).then(() => {
+        fetch("/customer/api/phone/verify", { method: "post", body: verificationCode }).then(() => {
             setStage(stages.codeVerified);
             onChange && onChange(true);
         });

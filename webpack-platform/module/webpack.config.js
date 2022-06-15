@@ -26,7 +26,7 @@ export default function webpackConfig(env) {
                     './App': './src/App.jsx',
                 },
                 remotes: {
-                    onboarding: "onboarding@[onboardingUrl]/remoteEntry.js"
+                    customer: "customer@[customerUrl]/remoteEntry.js"
                 },
                 shared: { react: { singleton: true, requiredVersion: "^18" }, "react-dom": { singleton: true, requiredVersion: "^18" } },
             }),
@@ -61,7 +61,7 @@ export default function webpackConfig(env) {
             port: 4501,
             client: { progress: true },
             proxy: {
-                '/onboarding/api': 'http://localhost:4502'
+                '/customer/api': 'http://localhost:4502'
             },
             setupMiddlewares: (middlewares, devServer) => {
                 middlewares.unshift({ name: 'mock-api', path: '/cards/api', middleware: mockApiMiddleware(apiMap) });

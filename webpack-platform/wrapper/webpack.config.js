@@ -21,7 +21,6 @@ export default function webpackConfig(env) {
             new ModuleFederationPlugin({
                 name: "wrapper",
                 remotes: {
-                    onboarding: "onboarding@[onboardingUrl]/remoteEntry.js",
                     cards: "cards@[cardsUrl]/remoteEntry.js"
                 },
                 shared: { react: { singleton: true, requiredVersion: "^18" }, "react-dom": { singleton: true, requiredVersion: "^18" } },
@@ -58,7 +57,7 @@ export default function webpackConfig(env) {
             client: { progress: true },
             proxy: {
                 '/cards/api': 'http://localhost:4501',
-                '/onboarding/api': 'http://localhost:4502'
+                '/customer/api': 'http://localhost:4502'
             },
             setupMiddlewares: (middlewares, devServer) => {
                 middlewares.unshift({ name: 'mock-api', path: '/api', middleware: mockApiMiddleware(apiMap) });

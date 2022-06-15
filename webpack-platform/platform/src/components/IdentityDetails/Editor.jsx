@@ -16,7 +16,7 @@ export default function IdentityDetailsEditor({ identityDetails, closeEditor }) 
     function handleChange(event) { setFormData({ name: event.target.name, value: event.target.value, }); }
     function submit(event) {
         event.preventDefault();
-        fetch("onboarding/api/customer/identity", { method: "post", headers: { "Content-Type": "application/json" }, body: JSON.stringify(values) })
+        fetch("customer/api/customer/identity", { method: "post", headers: { "Content-Type": "application/json" }, body: JSON.stringify(values) })
             .then(() => closeEditor());
     }
 

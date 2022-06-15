@@ -19,7 +19,7 @@ export default function webpackConfig(env) {
         plugins: [
             new HtmlWebpackPlugin({ title: "Customer Platfrom", scriptLoading: "module", template: "index.html" }),
             new ModuleFederationPlugin({
-                name: 'onboarding',
+                name: 'customer',
                 filename: 'remoteEntry.js',
                 exposes: {
                     './PhoneNumber': './src/components/PhoneNumber/index.jsx',
@@ -56,7 +56,7 @@ export default function webpackConfig(env) {
             port: 4502,
             client: { progress: true },
             setupMiddlewares: (middlewares, devServer) => {
-                middlewares.unshift({ name: 'mock-api', path: '/onboarding/api', middleware: mockApiMiddleware(apiMap) });
+                middlewares.unshift({ name: 'mock-api', path: '/customer/api', middleware: mockApiMiddleware(apiMap) });
                 return middlewares;
             }
         }

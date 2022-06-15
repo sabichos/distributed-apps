@@ -6,7 +6,7 @@ export default function OffersViewer({ initialOffers }) {
     const [offers, setOffers] = useState(initialOffers);
 
     function optin(offer) {
-        fetch("onboarding/api/offers", { method: "post", headers: { "Content-Type": "application/json" }, body: JSON.stringify(offer) })
+        fetch("customer/api/offers", { method: "post", headers: { "Content-Type": "application/json" }, body: JSON.stringify(offer) })
             .then(() => {
                 const ofs = offers.map(o => ({ ...o, optin: o.name === offer.name ? true : !!o.optin }));
                 setOffers(ofs);
