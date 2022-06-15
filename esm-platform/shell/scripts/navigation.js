@@ -1,6 +1,6 @@
-import { cardPage } from "./shell.js"
+import { cardPage, renderDashboard } from "./shell.js"
 import { newCard } from "http://localhost:4531/scripts/new-card.js";
-
+import Navigo from "https://esm.sh/v86/navigo@8.11.1/es2022/navigo.js";
 
 export function initRouter(root, user) {
 
@@ -15,6 +15,28 @@ export function initRouter(root, user) {
     });
 
     setComponent();
+}
+
+export async function initRouter2(root, user) {
+    const router = new Navigo("/");
+
+    router.on({
+        "": async function () {
+            const page = await renderDashboard();
+            root && root.replaceChildren(page);
+        },
+        "/cards": async function () {
+            const page = await cardPage(user);
+            root && root.replaceChildren(page);
+        },
+        "/cards/new-card": async function () {
+            const page = await newCard();
+            root && root.replaceChildren(page);
+        }
+    });
+
+
+
 }
 
 export async function getRouteComponent(...args) {
