@@ -1,0 +1,16 @@
+/*
+ * Skypack CDN - react-chartjs-2@4.2.0
+ *
+ * Learn more:
+ *   📙 Package Documentation: https://www.skypack.dev/view/react-chartjs-2
+ *   📘 Skypack Documentation: https://www.skypack.dev/docs
+ *
+ * Pinned URL: (Optimized for Production)
+ *   ▶️ Normal: https://cdn.skypack.dev/pin/react-chartjs-2@v4.2.0-EasKc0OwrRSjN3XNiV56/mode=imports/optimized/react-chartjs-2.js
+ *   ⏩ Minified: https://cdn.skypack.dev/pin/react-chartjs-2@v4.2.0-EasKc0OwrRSjN3XNiV56/mode=imports,min/optimized/react-chartjs-2.js
+ *
+ */
+
+// Browser-Optimized Imports (Don't directly import the URLs below in your application!)
+export * from '/-/react-chartjs-2@v4.2.0-EasKc0OwrRSjN3XNiV56/dist=es2019,mode=imports/optimized/react-chartjs-2.js';
+export {default} from '/-/react-chartjs-2@v4.2.0-EasKc0OwrRSjN3XNiV56/dist=es2019,mode=imports/optimized/react-chartjs-2.js';
