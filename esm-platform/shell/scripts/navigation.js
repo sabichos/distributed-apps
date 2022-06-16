@@ -39,6 +39,37 @@ export async function initRouter2(root, user) {
 
 }
 
+export async function initRouter3(root, user) {
+    if (navigation) {
+        navigation.addEventListener('navigate', event => {
+            const url = new URL(event.destination.url);
+            switch (url.pathname) {
+                case "/":
+                    event.transitionWhile((async () => {
+                        const page = await renderDashboard();
+                        root && root.replaceChildren(page);
+                    })());
+                    break;
+                case "/cards":
+                    event.transitionWhile((async () => {
+                        const page = await cardPage(user);
+                        root && root.replaceChildren(page);
+                    })());
+                    break;
+                case '/cards/new-card':
+                    event.transitionWhile((async () => {
+                        const page = await newCard();
+                        root && root.replaceChildren(page);
+                    })());
+                    break;
+            }
+        });
+    } else {
+        await initRouter(root, user);
+    }
+
+
+}
 export async function getRouteComponent(...args) {
 
     switch (location.hash) {

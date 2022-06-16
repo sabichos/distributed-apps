@@ -1,5 +1,5 @@
 import { fetchTemplate, createIcon } from "./actions.js";
-import { initRouter2, getRoute } from "./navigation.js";
+import { initRouter3, getRoute } from "./navigation.js";
 import { Chart, PieController, ArcElement, BarController, BarElement, CategoryScale, Legend, Title, Tooltip,LinearScale } from "https://esm.sh/v85/chart.js@3.8.0/es2022/chart.js";
 
 async function renderNavbar(user) {
@@ -50,18 +50,19 @@ async function renderPage(user) {
 export async function renderDashboard() {
     const data = await fetch("../assets/data.json").then(res => res.json());
     const dashboard = await fetchTemplate("dashboard");
-    document.getElementById("main").replaceChildren(dashboard);
     Chart.register(PieController, ArcElement, BarController, BarElement, CategoryScale, Legend, Title, Tooltip,LinearScale);
 
-    const pie = document.getElementById("dash-pie").getContext("2d");
+    const pie = dashboard.querySelector("#dash-pie").getContext("2d");
     const pieChart = new Chart(pie, {
         type: 'pie', data: data.doughnut
     });
 
-    const bar = document.getElementById("dash-bar").getContext("2d");
+    const bar = dashboard.querySelector("#dash-bar").getContext("2d");
     const barChart = new Chart(bar, {
         type: 'bar', data: data.bar
     });
+
+    return dashboard;
 }
 
 
@@ -86,5 +87,5 @@ export async function cardPage(user) {
 export async function shell(userDetails) {
     userDetails["selectedRoute"] = getRoute(userDetails.sitemap);
     await Promise.all([renderNavbar(userDetails), renderPage(userDetails), renderUserDetails(userDetails)]);
-    initRouter2(document.querySelector("#page-body"), userDetails);
+    initRouter3(document.querySelector("#page-body"), userDetails);
 }
