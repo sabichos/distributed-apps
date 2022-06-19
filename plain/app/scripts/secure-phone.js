@@ -23,7 +23,7 @@
 
     class PhoneNumber extends HTMLElement {
 
-        constructor(){
+        constructor() {
             super();
             this.value = "000-0000000"
         }
@@ -37,6 +37,7 @@
         static get observedAttributes() {
             return ["value"];
         }
+        
         static get formAssociated() {
             return true;
         }
@@ -56,7 +57,7 @@
                     phoneWrapper.querySelector("#btn-send-code").removeAttribute("disabled");
                 else {
                     phoneWrapper.querySelector("#btn-send-code").setAttribute("disabled", "true");
-                    this.internals.setValidity({ valueMissing: true, 'This field is required', event.target });
+                    this.internals.setValidity({ valueMissing: true }, 'This field is required', event.target);
                 }
             });
 

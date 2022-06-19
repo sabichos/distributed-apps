@@ -14,7 +14,8 @@ import { WizardComponent } from './components/wizard/wizard.component';
     BrowserModule
   ],
   providers: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  //bootstrap:[HomeComponent]
 })
 export class AppModule implements DoBootstrap {
   constructor(injector: Injector) {
