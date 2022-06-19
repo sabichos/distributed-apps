@@ -22,6 +22,12 @@
 
 
     class PhoneNumber extends HTMLElement {
+
+        constructor(){
+            super();
+            this.value = "000-0000000"
+        }
+
         async connectedCallback() {
             this.attachShadow({ mode: 'open' });
             this.render();
@@ -29,7 +35,7 @@
         }
 
         static get observedAttributes() {
-            return [value];
+            return ["value"];
         }
         static get formAssociated() {
             return true;
