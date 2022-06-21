@@ -1,7 +1,7 @@
 # distributed-apps
 A demonstration of how to create and configure distributed javascript applications  
 
-** pre requests **
+**pre requests**
 - please use node.js@^16 and npm@^8
 - install [pnpm](https://pnpm.io/installation)
 
