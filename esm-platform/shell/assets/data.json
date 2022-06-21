@@ -1,0 +1,68 @@
+{
+    "doughnut": {
+        "labels": [
+            "Food",
+            "Travel",
+            "Bills",
+            "Entertainment",
+            "Loans",
+            "Other"
+        ],
+        "datasets": [
+            {
+                "label": "Card Expenses",
+                "data": [
+                    300,
+                    50,
+                    100,
+                    250,
+                    140,
+                    30
+                ],
+                "backgroundColor": [
+                    "#DBD56E",
+                    "#88AB75",
+                    "#2D93AD",
+                    "#7D7C84",
+                    "#DE8F6E",
+                    "#F9A03F"
+                ],
+                "hoverOffset": 4
+            }
+        ]
+    },
+    "bar": {
+        "labels": [
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug"
+        ],
+        "datasets": [
+            {
+                "label": "Expenses over time",
+                "data": [
+                    65,
+                    59,
+                    80,
+                    81,
+                    56,
+                    55,
+                    40
+                ],
+                "backgroundColor": [
+                    "#A54657",
+                    "#582630",
+                    "#F7EE7F",
+                    "#F1A66A",
+                    "#F26157",
+                    "#A7CECB",
+                    "#777DA7"
+                ]
+            }
+        ]
+    }
+}

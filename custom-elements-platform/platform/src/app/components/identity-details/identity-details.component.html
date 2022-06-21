@@ -1,0 +1,31 @@
+<app-card title="Identity Details">
+
+    <div viewer class="view">
+        <div *ngIf="identity.firstName"><span class="label">First name:</span> <span
+                class="value">{{identity.firstName}}</span></div>
+        <div *ngIf="identity.lastName"><span class="label">Last name:</span> <span
+                class="value">{{identity.lastName}}</span></div>
+        <div *ngIf="identity.phoneNumber"><span class="label">Phone Number:</span> <span
+                class="value">{{identity.phoneNumber}}</span></div>
+    </div>
+
+    <div editor class="edit">
+        <div class="form-field">
+            <label for="firstName">First Name</label>
+            <input id="firstName" name="firstName" label="First Name" [value]="identity.firstName"
+                (input)="handleChange($event.target)" />
+        </div>
+        <div class="form-field">
+            <label for="lastName">Last Name</label>
+            <input id="lastName" name="lastName" label="Last Name" [value]="identity.lastName"
+                (input)="handleChange($event.target)" />
+        </div>
+        <div class="form-field">
+            <label>Phone Number</label>
+            <secure-phone></secure-phone>
+        </div>
+        <button type="button" class="btn-submit" (click)="updateIdentityDetails">Save</button>
+    </div>
+
+
+</app-card>

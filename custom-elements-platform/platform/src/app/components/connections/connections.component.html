@@ -1,0 +1,28 @@
+<app-card title="Connections">
+
+  <div viewer class="view">
+    <ul>
+      <li *ngFor="let connection of connections">
+        <div class="icon">
+          <app-icon [name]="connectionTypes[connection.type]"></app-icon>
+        </div>
+        <div>{{connection.name}}</div>
+      </li>
+    </ul>
+  </div>
+
+  <div editor class="edit">
+    <ul>
+      <li *ngFor="let connection of connections; let i=index">
+        <div class="icon">
+          <app-icon [name]="connectionTypes[connection.type]"></app-icon>
+        </div>
+        <div>{{connection.name}}</div>
+        <button type="button" class="btn-remove" (click)="removeConnection(connection,i)">
+          <span><app-icon name="iconTrash"></app-icon></span>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+</app-card>

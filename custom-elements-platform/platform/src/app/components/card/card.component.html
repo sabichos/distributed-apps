@@ -1,0 +1,9 @@
+<div class="header">
+    <h2>{{title}}</h2>
+    <button (click)="toggleMode()">{{mode.action}}</button>
+</div>
+
+<div class="body">
+    <ng-content *ngIf="mode.name==='viewer'" select="[viewer]"></ng-content>
+    <ng-content *ngIf="mode.name==='editor'" select="[editor]"></ng-content>
+</div>

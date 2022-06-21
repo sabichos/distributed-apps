@@ -1,0 +1,16 @@
+{
+  "name": "yotam-admin-plain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "serve": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.18.1",
+    "regexparam": "^2.0.0"
+  }
+}

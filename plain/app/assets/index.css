@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: clamp(100%, 1rem + 2vw, 16px);
+    font-family: 'Roboto Condensed', sans-serif;
+    color: var(--color-dark);
+}
+
+#wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+#navbar {
+    width: 200px;
+}
+
+#main {
+    flex: auto;
+    background-color: var(--color-light);
+    overflow: auto;
+}
+
+[data-hidden] {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    transform: translateX(20px);
+}
+
+@media screen and (max-width: 1260px) {
+    #navbar {
+        display: none;
+    }
+}
+
+:root {
+    /* colors come from brand variables */
+
+    /* sizes */
+    --size-xs: 8px;
+    --size-sm: 16px;
+    --size-md: 25px;
+    --size-lg: 32px;
+    --size-xl: 50px;
+
+
+    /* Colors */
+    --color-white: #fff;
+    --color-light: #fdfdfd;
+    --color-light-medium: #dfdfdf;
+    --color-medium: #aaa;
+    --color-medium-dark: #666;
+    --color-dark: #333;
+    --color-accent1: #ff0099;
+    --color-accent2: #e40089;
+    --color-accent3: #e0c3fc;
+
+
+
+    /* fonts */
+    --font-xs: 400 0.75rem 'Roboto Condensed';
+    --font-sm: 400 0.875rem 'Roboto Condensed';
+    --font-md: 400 1rem 'Roboto Condensed';
+    --font-lg: 400 1.125rem 'Roboto Condensed';
+    --font-xl: 400 1.25rem 'Roboto Condensed';
+    --font-xxl: 400 1.75rem 'Roboto Condensed';
+    --font-title: 100 1.125rem 'Poiret One';
+}

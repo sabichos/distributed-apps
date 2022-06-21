@@ -1,0 +1,11 @@
+{
+    "name": "test",
+    "description": "testing web components",
+    "authors": "Yotam",
+    "version": "1.0.0",
+    "private":true,
+    "scripts": {
+        "start":"pnpm dlx serve -C -p 4524"
+    }
+    
+}

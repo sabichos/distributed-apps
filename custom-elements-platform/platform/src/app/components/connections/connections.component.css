@@ -1,0 +1,32 @@
+ ul {
+   padding: 0;
+   list-style: none;
+ }
+
+ ul li {
+   display: flex;
+   align-items: center;
+   gap: var(--size-xl);
+   padding-block: var(--size-sm);
+   border-bottom: 1px solid var(--color-light-medium);
+ }
+
+ .icon {
+   width: 32px;
+   height: 32px;
+   fill: var(--color-dark);
+ }
+
+ .btn-remove {
+   border: none;
+   background-color: transparent;
+   flex: auto;
+   text-align: end;
+ }
+
+ .btn-remove span  {
+   width: 20px;
+   height: 20px;
+   fill: var(--color-accent2);
+   display: inline-block;
+ }

@@ -1,0 +1,15 @@
+<app-card title="Offers">
+    <div viewer class="view">
+        <ul>
+            <li *ngFor="let offer of offers">
+                <h4>
+                    {{offer.name}}
+                    <span *ngIf="offer.optin" class="optin side">active</span>
+                    <button *ngIf="!offer.optin" type="button" class="btn-link side" (click)="optin(offer)">opt in</button>
+                </h4>
+                <div>{{offer.description}}</div>
+                <div class="date">valid until {{offer.date}}</div>
+            </li>
+        </ul>
+    </div>
+</app-card>

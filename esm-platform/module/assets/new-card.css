@@ -1,0 +1,138 @@
+#new-card header {
+    text-align: center;
+    padding: var(--size-sm);
+    border-bottom: 1px solid var(--color-medium);
+    min-width: fit-content;
+    width: 40vw;
+    margin: 0 auto;
+    font-weight: 100;
+}
+
+
+#new-card header h1 {
+    margin: 0;
+    font: var(--font-xl);
+    font-size: 2rem;
+    padding-inline-start: var(--size-sm);
+}
+
+
+#new-card .loader {
+    grid-area: main;
+    text-align: center;
+    margin-top: var(--size-sm);
+}
+
+
+#new-card #card-wizard {
+    min-width: fit-content;
+    width: 40vw;
+    margin: var(--size-sm) auto;
+}
+
+#new-card .faq-link {
+    position: absolute;
+    top: calc(50vh - 48px);
+    inset-inline-end: 0;
+    background-color: var(--color-dark);
+    padding: var(--size-xs) var(--size-md) var(--size-xs) var(--size-xs);
+    fill: var(--color-white);
+}
+
+#new-card .faq-link svg {
+    width: 32px;
+    height: 32px;
+    fill: var(--color-gray-100);
+}
+
+
+
+#new-card .card-step {
+
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+    border: none;
+    background-color: var(--color-white);
+}
+
+#new-card .card-step .header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-medium);
+    margin-bottom: var(--size-sm);
+    padding: var(--size-sm);
+}
+
+#new-card .card-step .header h2 {
+    margin: 0;
+}
+
+#new-card .card-step .header button {
+    border: none;
+    background-color: transparent;
+    color: var(--color-accent1);
+}
+
+#new-card .card-step .header button:hover {
+    color: var(--color-dark);
+}
+
+#new-card .card-step .body {
+    padding: 0 var(--size-sm) var(--size-sm);
+}
+
+
+
+#new-card .card-step .step-body {
+    padding: 0 var(--size-sm);
+}
+
+#new-card .card-step h2 {
+   font:var(--font-md);
+}
+
+#new-card .card-step .form-control {
+    display: flex;
+    flex-direction:column;
+    margin-bottom:var(--size-lg);
+}
+
+#new-card .card-step .form-control label {
+   color: var(--color-medium);
+   font:var(--font-md);
+}
+
+#new-card .card-step .form-control input {
+   border:none;
+   border-bottom: 1px solid var(--color-dark);
+   outline:none;
+}
+
+
+#new-card .card-step .legal{
+   max-width:33vw;
+   font:var(--font-sm);
+}
+
+#new-card .card-step footer {
+    border-top: 1px solid var(--color-medium);
+    padding: var(--size-sm);
+    margin-top: var(--size-lg);
+}
+
+#new-card .card-step footer button {
+   background-color: var(--color-accent1);
+   border:none;
+   padding:var(--size-xs) var(--size-lg);
+   border-radius: 2px;
+   color:var(--color-white);
+   text-transform: uppercase;
+   margin: 0 auto;
+   display: block;
+   font: var(--font-lg);
+   font-weight: 100;
+}
+
+#new-card .card-step footer button:hover {
+   opacity: 0.8;
+   transition: opacity .3s;
+}

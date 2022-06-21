@@ -1,0 +1,27 @@
+
+
+#page-header .page-title {
+    display: flex;
+    padding: var(--size-sm);
+    align-items: center;
+    gap: var(--size-xs);
+}
+
+
+#page-header .page-title .icon svg {
+    fill: var(--color-medium-dark);
+    width: 32px;
+    height: 32px;
+}
+
+#page-header .page-title .title {
+    font: var(--font-xxl);
+    border-inline-start: 1px solid var(--color-medium);
+    padding-inline-start:var(--size-xs);
+    margin: 0;
+}
+
+#page-header .header-breadcrumbs {
+    border-top: 1px solid var(--color-medium);
+    padding: var(--size-sm);
+}

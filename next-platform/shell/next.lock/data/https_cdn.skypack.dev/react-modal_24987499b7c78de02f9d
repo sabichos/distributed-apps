@@ -1,0 +1,16 @@
+/*
+ * Skypack CDN - react-modal@3.15.1
+ *
+ * Learn more:
+ *   📙 Package Documentation: https://www.skypack.dev/view/react-modal
+ *   📘 Skypack Documentation: https://www.skypack.dev/docs
+ *
+ * Pinned URL: (Optimized for Production)
+ *   ▶️ Normal: https://cdn.skypack.dev/pin/react-modal@v3.15.1-sUZZsS1SHwlMYPcfwImX/mode=imports/optimized/react-modal.js
+ *   ⏩ Minified: https://cdn.skypack.dev/pin/react-modal@v3.15.1-sUZZsS1SHwlMYPcfwImX/mode=imports,min/optimized/react-modal.js
+ *
+ */
+
+// Browser-Optimized Imports (Don't directly import the URLs below in your application!)
+export * from '/-/react-modal@v3.15.1-sUZZsS1SHwlMYPcfwImX/dist=es2019,mode=imports/optimized/react-modal.js';
+export {default} from '/-/react-modal@v3.15.1-sUZZsS1SHwlMYPcfwImX/dist=es2019,mode=imports/optimized/react-modal.js';

@@ -1,0 +1,35 @@
+#card-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-rows: repeat(auto-fit, 200px);
+    gap: var(--size-md);
+    padding: var(--size-sm);
+    overflow: auto;
+}
+
+#card-page .card {
+    background-color: var(--color-light-medium);
+    box-shadow: 0 1px 7px 0 var(--color-medium);
+    text-align: center;
+    height: 150px;
+    padding: var(--size-md);
+    box-sizing: border-box;
+    color: var(--color-dark);
+    text-decoration: none;
+}
+
+#card-page .card:hover {
+    background-color: var(--color-light);
+    transition: background-color 0.5s;
+}
+
+#card-page .card svg {
+    width: 44px;
+    height: 44px;
+    fill: var(--color-accent1);
+}
+
+#card-page .card h4 {
+    font: var(--font-md);
+    margin-block: var(--size-sm);
+}
