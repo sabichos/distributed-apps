@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 
 const Module = React.lazy(() => import('module/App'));
 
-export default const App = ({ store }) => {
+export default function App({ store }) {
     return (
 
         <div>

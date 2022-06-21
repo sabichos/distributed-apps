@@ -29,6 +29,7 @@
         }
 
         async connectedCallback() {
+            
             this.attachShadow({ mode: 'open' });
             this.render();
             this.internals = this.attachInternals();
@@ -86,8 +87,12 @@
     customElements.define('phone-number', PhoneNumber);
 })();
 
+document.querySelector("#btn-change").addEventListener("click",()=>{
+    document.querySelector("phone-number").setAttribute("value","05444549494")
+})
 
-
+const phoneNumber = document.createElement("phone-number");
+document.appendChild(phoneNumber);
 
 const host = `
 <phone-number value="054-9910236">

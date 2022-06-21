@@ -1,14 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 
 
-export default const App = () => {
+export default function App() {
     const dispatch = useDispatch();
     const card = useSelector(state => state.card);
 
     return (
         <div >
-            <div>Module</div>
+            <h1>Your {card.type} Details</h1>
             <div>
                 <button onClick={() => dispatch({ type: "SET_CARD", payload: {} })}>Set</button>
             </div>
